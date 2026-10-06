@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary-fixed-variant": "#3f465c",
+          "on-error": "#ffffff",
+          "inverse-primary": "#4edea3",
+          "on-surface": "#0b1c30",
+          "error": "#ba1a1a",
+          "primary-fixed": "#6ffbbe",
+          "secondary-container": "#6063ee",
+          "secondary": "#4648d4",
+          "surface-container-lowest": "#ffffff",
+          "on-background": "#0b1c30",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#213145",
+          "tertiary": "#565e74",
+          "surface-tint": "#006c49",
+          "surface-container-highest": "#d3e4fe",
+          "secondary-fixed": "#e1e0ff",
+          "secondary-fixed-dim": "#c0c1ff",
+          "surface-container": "#e5eeff",
+          "tertiary-fixed-dim": "#bec6e0",
+          "on-secondary-fixed": "#07006c",
+          "outline": "#6c7a71",
+          "surface-bright": "#f8f9ff",
+          "on-secondary-fixed-variant": "#2f2ebe",
+          "surface-container-low": "#eff4ff",
+          "tertiary-fixed": "#dae2fd",
+          "surface-container-high": "#dce9ff",
+          "on-primary-fixed": "#002113",
+          "on-tertiary-container": "#31394d",
+          "on-secondary": "#ffffff",
+          "primary-fixed-dim": "#4edea3",
+          "on-primary-container": "#00422b",
+          "on-primary": "#ffffff",
+          "primary-container": "#10b981",
+          "surface-dim": "#cbdbf5",
+          "on-primary-fixed-variant": "#005236",
+          "on-surface-variant": "#3c4a42",
+          "on-error-container": "#93000a",
+          "on-secondary-container": "#fffbff",
+          "tertiary-container": "#9ba2bb",
+          "error-container": "#ffdad6",
+          "surface": "#f8f9ff",
+          "outline-variant": "#bbcabf",
+          "surface-variant": "#d3e4fe",
+          "primary": "#006c49",
+          "background": "#f8f9ff",
+          "on-tertiary-fixed": "#131b2e",
+          "inverse-on-surface": "#eaf1ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter-lg": "2rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2rem",
+          "gutter": "1.5rem",
+          "margin": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-2xs": "0.125rem",
+          "space-2xl": "3rem",
+          "space-md": "1rem",
+          "gutter-sm": "1rem",
+          "space-xs": "0.25rem",
+          "margin-lg": "2rem",
+          "margin-sm": "1rem"
+        },
+        "fontFamily": {
+          "headline-lg-mobile": ["Inter"],
+          "title-sm": ["Inter"],
+          "display-lg-mobile": ["Inter"],
+          "title-md": ["Inter"],
+          "display-lg": ["Inter"],
+          "label-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-md": ["Inter"],
+          "body-sm": ["Inter"],
+          "stat-counter": ["Inter"],
+          "body-lg": ["Inter"],
+          "headline-sm": ["Inter"],
+          "headline-lg": ["Inter"],
+          "label-md": ["Inter"]
+        },
+        "fontSize": {
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "title-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600"}],
+          "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+          "stat-counter": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-gutter flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><img alt="BusinessHub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XQI3VukdHsP_K684gtieBUkOxY1rq9cgwxCCPEeAh9h3cggEpvkbqaqg9RDEq1SQGxG4D_-Iy71YCciK4MA2WVj21ixqWG7Odgeg7eoQSeDhItfpO2gXl04Sz0n6dtVbQ8C09-tyDRdDwDPdALt5rihQyE-uQSP4xmjIgSsmyX53mZErQriKw35XSFE-z9YeSYWHfbEL9DaxcYW_4i0X-mF00-DGKtw4KB2qYAi2ZAb8XHRmGRwAfGsTw"/><span class="font-title-md text-title-md text-inverse-on-surface tracking-tight">BusinessHub</span></div><span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg uppercase tracking-wider">PRO</span></div><div class="px-gutter pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider">Operations Core</span></div><nav class="flex flex-col gap-space-2xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-title-sm text-title-sm shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary-container font-title-sm text-title-sm shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="products-stock" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Products & Stock</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="sales-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Sales & Orders</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="invoices-billing" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Invoices & Billing</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="bookings-schedule" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">calendar_today</span><span>Bookings & Schedule</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="customers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Reports</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="whatsapp-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">chat</span><span>WhatsApp Orders</span></div><span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-space-xs py-space-2xs rounded-full">4</span></a></nav></div><div class="p-space-sm"><div class="p-space-sm rounded-xl bg-surface-container-highest/10"><div class="flex items-center justify-between mb-space-xs"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-tertiary-fixed-dim">Store Online</span></div><span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">storefront</span></div><div class="flex items-center justify-between"><span class="font-title-sm text-title-sm text-inverse-on-surface truncate">Bloom & Co. Botanicals</span><button class="text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md w-96"><div class="flex items-center w-full px-space-md py-space-xs rounded-lg bg-surface-container-low"><span class="material-symbols-outlined text-tertiary mr-space-xs text-[18px]">search</span><input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-tertiary focus:outline-none w-full" placeholder="Search products, invoices, customers... ⌘K" type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-tertiary hover:text-on-surface cursor-pointer transition-colors"><span class="material-symbols-outlined text-[18px]">date_range</span><span class="font-label-md text-label-md">Last 30 Days</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-on-surface-variant">WhatsApp Synced</span></div><button class="relative p-space-xs rounded-lg text-tertiary hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-title-sm text-title-sm hover:opacity-90 transition-opacity" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New</span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Hktimd6gRtew-KRfomTUj1V35YE7dPcnKr1GEWBAB-H93NUlVg2Hti3zU87CeEgMZ8H9yQpEndR9RPFCZhbVE9pb34a8UX7TjfDbgLQsByX5nAikN9RrV-VLi9yyc_tWjTK90b61VsdoQlmO8xmTG_Kf7xJ6-MGxo50bmtbmnEVpoG4H12xV4PQU0-6YZo_8PL_The4b32k9JEJIHnkpHBJu4ChOh4WwQfrT4vd5YjhdVXm9gPgB"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-on-surface leading-none">Elena Vance</span><span class="font-label-sm text-label-sm text-tertiary leading-tight">Owner</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="w-full max-w-[1600px] mx-auto p-gutter"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full">
+<!-- Top Operational Bar / Context Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-md text-headline-md text-on-surface">Bloom & Co. Operations Deck</h1>
+<span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg uppercase tracking-wider">Live Hub</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary">Real-time consolidated POS, e-Commerce & WhatsApp Business telemetry</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-2xs px-space-sm py-space-xs bg-surface-container-low rounded-lg text-tertiary font-body-sm text-body-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-md text-label-md text-on-surface">Auto-sync 3s ago</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-title-sm text-title-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Daily Export</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-title-sm text-title-sm hover:opacity-90 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>Instant Checkout</span>
+</button>
+</div>
+</div>
+<!-- 4-Card Executive KPI Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md w-full">
+<!-- Card 1: Today's Revenue -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary-container/10 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Today's Revenue</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-stat-counter text-stat-counter text-on-surface tracking-tight">$3,420.50</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<span class="inline-flex items-center gap-space-2xs bg-primary-container/15 text-primary font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +14.2%
+          </span>
+<span class="font-body-sm text-body-sm text-tertiary">vs. yesterday ($2,995.10)</span>
+</div>
+</div>
+<!-- Card 2: Active Orders -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary-container/10 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Active Orders</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+</div>
+<div class="my-space-xs flex items-baseline gap-space-xs">
+<div class="font-stat-counter text-stat-counter text-on-surface tracking-tight">28</div>
+<span class="font-label-md text-label-md text-tertiary">in queue</span>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<span class="inline-flex items-center gap-space-2xs bg-amber-100 text-amber-900 font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+            8 WhatsApp pending
+          </span>
+<span class="font-body-sm text-body-sm text-tertiary">needs review</span>
+</div>
+</div>
+<!-- Card 3: Inventory Health -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Inventory Health</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</div>
+</div>
+<div class="my-space-xs flex items-baseline justify-between">
+<div class="font-stat-counter text-stat-counter text-on-surface tracking-tight">94.2%</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">OPTIMAL</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="inline-flex items-center gap-space-2xs bg-error-container text-on-error-container font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg">
+            3 items critically low
+          </span>
+<a class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-space-2xs" href="#">
+            Restock
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Bookings Today -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container-highest/30 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Bookings Today</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+</div>
+</div>
+<div class="my-space-xs flex items-baseline gap-space-xs">
+<div class="font-stat-counter text-stat-counter text-on-surface tracking-tight">6</div>
+<span class="font-label-md text-label-md text-tertiary">consultations</span>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs truncate">
+<span class="inline-flex items-center gap-space-2xs bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg shrink-0">
+            Next: 2:00 PM
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">w/ Sarah Jenkins</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Grid: 8 Cols / 4 Cols -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full items-start">
+<!-- LEFT COLUMN (Span 8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg w-full">
+<!-- Revenue & Sales Trend Chart Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md w-full">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Revenue & Multi-Channel Velocity</h2>
+<span class="bg-surface-container-high text-tertiary px-space-xs py-space-2xs rounded-lg font-label-sm text-label-sm">Gross Sales</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary">Real-time sync between POS terminals, online checkout, and direct WhatsApp invoices</p>
+</div>
+<!-- Segmented Control -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl self-start sm:self-auto">
+<button class="chart-tab px-space-sm py-1 rounded-lg font-label-sm text-label-sm text-tertiary hover:text-on-surface transition-colors" data-period="daily" type="button">Daily</button>
+<button class="chart-tab px-space-sm py-1 rounded-lg font-label-sm text-label-sm bg-surface-container-lowest text-on-surface shadow-sm font-semibold transition-colors" data-period="weekly" type="button">Weekly</button>
+<button class="chart-tab px-space-sm py-1 rounded-lg font-label-sm text-label-sm text-tertiary hover:text-on-surface transition-colors" data-period="monthly" type="button">Monthly</button>
+</div>
+</div>
+<!-- Channel Legends & Summary Metrics -->
+<div class="flex flex-wrap items-center gap-space-lg pt-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-sm bg-primary-container"></span>
+<span class="font-label-md text-label-md text-tertiary">WhatsApp Direct (42%)</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">$9,410</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-sm bg-secondary-container"></span>
+<span class="font-label-md text-label-md text-tertiary">POS Register (35%)</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">$7,842</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-sm bg-tertiary-container"></span>
+<span class="font-label-md text-label-md text-tertiary">Online Store (23%)</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">$5,155</span>
+</div>
+</div>
+<!-- Interactive Hybrid SVG Chart Card -->
+<div class="relative w-full h-72 bg-surface-container-low/40 rounded-xl p-space-md flex flex-col justify-end overflow-hidden">
+<!-- Peak Callout Badge -->
+<div class="absolute top-6 right-28 bg-inverse-surface text-inverse-on-surface px-space-sm py-space-xs rounded-xl shadow-lg flex items-center gap-space-xs z-10">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-tertiary-fixed">Sat Peak Record</span>
+<span class="font-title-sm text-title-sm font-bold text-inverse-on-surface">$4,850.00</span>
+</div>
+</div>
+<!-- SVG Visual Representation -->
+<svg class="w-full h-56" fill="none" preserveaspectratio="none" viewbox="0 0 720 220">
+<defs>
+<lineargradient id="primaryAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#10b981" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#10b981" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="secondaryBarGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#6063ee" stop-opacity="0.8"></stop>
+<stop offset="100%" stop-color="#6063ee" stop-opacity="0.3"></stop>
+</lineargradient>
+</defs>
+<!-- Subtle Horizontal Grid Lines -->
+<line stroke="#d3e4fe" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="720" y1="40" y2="40"></line>
+<line stroke="#d3e4fe" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="720" y1="90" y2="90"></line>
+<line stroke="#d3e4fe" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="720" y1="140" y2="140"></line>
+<line stroke="#d3e4fe" stroke-width="1" x1="0" x2="720" y1="190" y2="190"></line>
+<!-- Multi-Channel Stacked Bars (POS & Online Store Baseline) -->
+<!-- Mon -->
+<rect fill="#9ba2bb" fill-opacity="0.6" height="70" rx="3" width="22" x="35" y="120"></rect>
+<rect fill="url(#secondaryBarGrad)" height="20" rx="3" width="22" x="35" y="100"></rect>
+<!-- Tue -->
+<rect fill="#9ba2bb" fill-opacity="0.6" height="80" rx="3" width="22" x="135" y="110"></rect>
+<rect fill="url(#secondaryBarGrad)" height="25" rx="3" width="22" x="135" y="85"></rect>
+<!-- Wed -->
+<rect fill="#9ba2bb" fill-opacity="0.6" height="95" rx="3" width="22" x="235" y="95"></rect>
+<rect fill="url(#secondaryBarGrad)" height="25" rx="3" width="22" x="235" y="70"></rect>
+<!-- Thu -->
+<rect fill="#9ba2bb" fill-opacity="0.6" height="85" rx="3" width="22" x="335" y="105"></rect>
+<rect fill="url(#secondaryBarGrad)" height="25" rx="3" width="22" x="335" y="80"></rect>
+<!-- Fri -->
+<rect fill="#9ba2bb" fill-opacity="0.6" height="110" rx="3" width="22" x="435" y="80"></rect>
+<rect fill="url(#secondaryBarGrad)" height="30" rx="3" width="22" x="435" y="50"></rect>
+<!-- Sat (Peak) -->
+<rect fill="#9ba2bb" fill-opacity="0.7" height="130" rx="3" width="22" x="535" y="60"></rect>
+<rect fill="url(#secondaryBarGrad)" height="35" rx="3" width="22" x="535" y="25"></rect>
+<!-- Sun -->
+<rect fill="#9ba2bb" fill-opacity="0.6" height="95" rx="3" width="22" x="635" y="95"></rect>
+<rect fill="url(#secondaryBarGrad)" height="20" rx="3" width="22" x="635" y="75"></rect>
+<!-- WhatsApp Velocity Trend Area Curve -->
+<path d="M 46 130 C 100 120, 146 95, 246 80 C 310 70, 346 88, 446 60 C 500 45, 546 15, 546 15 C 546 15, 600 65, 646 75 L 646 190 L 46 190 Z" fill="url(#primaryAreaGrad)"></path>
+<path d="M 46 130 C 100 120, 146 95, 246 80 C 310 70, 346 88, 446 60 C 500 45, 546 15, 546 15 C 546 15, 600 65, 646 75" fill="none" stroke="#10b981" stroke-linecap="round" stroke-width="3"></path>
+<!-- Peak indicator point -->
+<circle cx="546" cy="15" fill="#ffffff" r="5" stroke="#10b981" stroke-width="3"></circle>
+<!-- Today indicator point -->
+<circle cx="646" cy="75" fill="#10b981" r="4"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between items-center px-4 pt-2 text-tertiary font-label-sm text-label-sm">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span class="font-bold text-on-surface">Sat (Peak)</span>
+<span class="text-primary font-semibold">Today (Sun)</span>
+</div>
+</div>
+</div>
+<!-- Recent Multi-Channel Transactions Table Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md w-full">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Multi-Channel Transactions</h2>
+<p class="font-body-sm text-body-sm text-tertiary">Real-time consolidated register, web, and conversational sales ledger</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center px-space-sm py-space-xs rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-tertiary mr-space-2xs">filter_list</span>
+<span class="font-label-sm text-label-sm text-tertiary">Channel: All</span>
+</div>
+<button class="text-primary hover:text-on-primary-container font-title-sm text-title-sm px-space-xs py-space-2xs" type="button">
+                View All (142)
+              </button>
+</div>
+</div>
+<!-- Table Wrapper -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md">Order ID</th>
+<th class="py-space-sm px-space-md">Customer & Source</th>
+<th class="py-space-sm px-space-md">Items Summary</th>
+<th class="py-space-sm px-space-md">Total</th>
+<th class="py-space-sm px-space-md">Status</th>
+<th class="py-space-sm px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40 font-body-sm text-body-sm">
+<!-- Row 1: WhatsApp Pending Order -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+                    #WA-1092
+                  </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary flex items-center justify-center font-bold text-label-sm">
+                        MC
+                      </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Maya Chen</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                          WhatsApp Order
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant max-w-[200px] truncate">
+                    2x Fiddle Leaf Fig, 1x Organic Plant Food
+                  </td>
+<td class="py-space-md px-space-md font-title-sm text-title-sm font-semibold text-on-surface">
+                    $184.00
+                  </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-space-2xs bg-amber-100 text-amber-900 font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                      Pending Conf.
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-primary transition-colors" title="Send WhatsApp Invoice" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="View Order" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: POS Register Completed -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+                    #ORD-8834
+                  </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-label-sm">
+                        AR
+                      </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Alonso Ruiz</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                          POS Terminal 1
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant max-w-[200px] truncate">
+                    1x Terracotta Planter Set, Soil Mix 5L
+                  </td>
+<td class="py-space-md px-space-md font-title-sm text-title-sm font-semibold text-on-surface">
+                    $62.50
+                  </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-space-2xs bg-primary-container/15 text-primary font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                      Paid & Dispensed
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-primary transition-colors" title="Send Receipt via WhatsApp" type="button">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="Print Receipt" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Online Store Processing -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+                    #ORD-8833
+                  </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-tertiary flex items-center justify-center font-bold text-label-sm">
+                        DK
+                      </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">David Kim</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                          Online Web Store
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant max-w-[200px] truncate">
+                    1x Monstera Deliciosa (Large), Brass Mister
+                  </td>
+<td class="py-space-md px-space-md font-title-sm text-title-sm font-semibold text-on-surface">
+                    $135.00
+                  </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-space-2xs bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Packing Order
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="Ship Package" type="button">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: WhatsApp Completed Direct Sale -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+                    #WA-1091
+                  </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary flex items-center justify-center font-bold text-label-sm">
+                        SB
+                      </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Sofia Bianchi</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                          WhatsApp Order
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant max-w-[200px] truncate">
+                    1x Custom Floral Centerpiece, Delivery Fee
+                  </td>
+<td class="py-space-md px-space-md font-title-sm text-title-sm font-semibold text-on-surface">
+                    $240.00
+                  </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-space-2xs bg-primary-container/15 text-primary font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                      Paid (Stripe Link)
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-primary transition-colors" title="Order Finished" type="button">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Operational Health & Inventory Low Stock Banner Widget -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface">3 Products Reached Critical Restock Level</span>
+<p class="font-body-sm text-body-sm text-tertiary">Sage Ceramic Pots (1 left), Orchid Bark 2L (0 left), Fern Hangers (2 left)</p>
+</div>
+</div>
+<button class="shrink-0 px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-title-sm text-title-sm shadow-sm transition-all" type="button">
+            Generate PO Order
+          </button>
+</div>
+</div>
+<!-- RIGHT COLUMN (Span 4) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg w-full">
+<!-- Urgent WhatsApp Conversational Action Feed -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md w-full relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-container"></span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Live WhatsApp Inquiries</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-primary-container/20 text-on-primary-fixed-variant px-space-xs py-space-2xs rounded-full font-bold">
+              3 Actionable
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary">Direct customer inquiries awaiting order conversion</p>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Chat Card 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-[11px]">
+                    CL
+                  </div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface leading-none block">Clara Lawson</span>
+<span class="font-label-sm text-label-sm text-tertiary">+1 (555) 392-1084</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-surface-container-lowest px-space-xs py-space-2xs rounded-lg shadow-sm">
+                  ~$96.00 Est.
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest/80 p-space-xs rounded-lg italic">
+                "Hi! Do you have the Ceramic Planters in sage green? I'd like to buy 2 right away."
+              </p>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<button class="flex-1 py-1.5 px-space-xs bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt</span>
+<span>Convert to Order</span>
+</button>
+<button class="py-1.5 px-space-sm bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg font-label-md text-label-md transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Reply</span>
+</button>
+</div>
+</div>
+<!-- Chat Card 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-[11px]">
+                    JT
+                  </div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface leading-none block">James Thorne</span>
+<span class="font-label-sm text-label-sm text-tertiary">+1 (555) 802-9931</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-surface-container-lowest px-space-xs py-space-2xs rounded-lg shadow-sm">
+                  ~$250.00 Est.
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest/80 p-space-xs rounded-lg italic">
+                "Elena, can you prepare a bespoke office floral centerpiece for delivery this Thursday?"
+              </p>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<button class="flex-1 py-1.5 px-space-xs bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_add_on</span>
+<span>Create Booking</span>
+</button>
+<button class="py-1.5 px-space-sm bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg font-label-md text-label-md transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Reply</span>
+</button>
+</div>
+</div>
+<!-- Chat Card 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[11px]">
+                    NW
+                  </div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface leading-none block">Nora Walsh</span>
+<span class="font-label-sm text-label-sm text-tertiary">+1 (555) 441-2810</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold bg-surface-container-lowest px-space-xs py-space-2xs rounded-lg shadow-sm">
+                  Delivery Inquiry
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest/80 p-space-xs rounded-lg italic">
+                "Checking in if order #WA-1090 has dispatched yet? Leaving my office soon."
+              </p>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<button class="flex-1 py-1.5 px-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg font-label-md text-label-md transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Send Tracking</span>
+</button>
+<button class="py-1.5 px-space-sm bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Reply</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Today's Appointments Timeline -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md w-full">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Schedule Today</h2>
+<span class="font-label-sm text-label-sm text-tertiary">6 Scheduled Consultations</span>
+</div>
+<button class="text-primary hover:text-on-primary-container font-title-sm text-title-sm" type="button">
+              Calendar
+            </button>
+</div>
+<div class="flex flex-col gap-space-md relative pl-2">
+<!-- Timeline Item 1 (Done) -->
+<div class="flex items-start gap-space-md relative">
+<div class="flex flex-col items-center">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<div class="w-0.5 h-12 bg-surface-container-highest mt-1"></div>
+</div>
+<div class="flex-1 -mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">11:00 AM – Marcus Vance</span>
+<span class="font-label-sm text-label-sm bg-surface-container text-tertiary px-space-xs py-space-2xs rounded">Done</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary">Terrarium Workshop Setup</p>
+</div>
+</div>
+<!-- Timeline Item 2 (Current / Next Up) -->
+<div class="flex items-start gap-space-md relative">
+<div class="flex flex-col items-center">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+</span>
+<div class="w-0.5 h-12 bg-surface-container-highest mt-1"></div>
+</div>
+<div class="flex-1 -mt-1 bg-surface-container-low p-space-xs rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">2:00 PM – Sarah Jenkins</span>
+<span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-space-xs py-space-2xs rounded">Next Up</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary">Botanical Consultation & Planter Sizing</p>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<button class="font-label-sm text-label-sm px-space-xs py-1 bg-surface-container-lowest text-on-surface rounded shadow-sm hover:bg-surface-container transition-colors" type="button">
+                    Check-in Client
+                  </button>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 (Upcoming) -->
+<div class="flex items-start gap-space-md relative">
+<div class="flex flex-col items-center">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+</span>
+</div>
+<div class="flex-1 -mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">4:30 PM – Liam Peterson</span>
+<span class="font-label-sm text-label-sm text-tertiary">In 2h 45m</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary">Custom Interior Plant Arrangement</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Executive Actions Widget -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md w-full">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Quick Command Actions</h2>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="flex flex-col items-start p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors group" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center mb-space-xs shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface">New Invoice</span>
+<span class="font-label-sm text-label-sm text-tertiary">POS or WhatsApp</span>
+</button>
+<button class="flex flex-col items-start p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors group" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center mb-space-xs shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add_box</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface">Add Product</span>
+<span class="font-label-sm text-label-sm text-tertiary">Barcode & Stock</span>
+</button>
+<button class="flex flex-col items-start p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors group" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center mb-space-xs shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface">Create Booking</span>
+<span class="font-label-sm text-label-sm text-tertiary">Slot Consultation</span>
+</button>
+<button class="flex flex-col items-start p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors group" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center mb-space-xs shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface">WhatsApp Blast</span>
+<span class="font-label-sm text-label-sm text-tertiary">VIP Customer Offers</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for Segmented Control in Sales Trend Card
+  document.querySelectorAll('.chart-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.chart-tab').forEach(t => {
+        t.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        t.classList.add('text-tertiary');
+      });
+      tab.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+      tab.classList.remove('text-tertiary');
+    });
+  });
+</script></div></main></div></body></html>
