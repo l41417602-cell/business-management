@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary-fixed-variant": "#3f465c",
+          "on-error": "#ffffff",
+          "inverse-primary": "#4edea3",
+          "on-surface": "#0b1c30",
+          "error": "#ba1a1a",
+          "primary-fixed": "#6ffbbe",
+          "secondary-container": "#6063ee",
+          "secondary": "#4648d4",
+          "surface-container-lowest": "#ffffff",
+          "on-background": "#0b1c30",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#213145",
+          "tertiary": "#565e74",
+          "surface-tint": "#006c49",
+          "surface-container-highest": "#d3e4fe",
+          "secondary-fixed": "#e1e0ff",
+          "secondary-fixed-dim": "#c0c1ff",
+          "surface-container": "#e5eeff",
+          "tertiary-fixed-dim": "#bec6e0",
+          "on-secondary-fixed": "#07006c",
+          "outline": "#6c7a71",
+          "surface-bright": "#f8f9ff",
+          "on-secondary-fixed-variant": "#2f2ebe",
+          "surface-container-low": "#eff4ff",
+          "tertiary-fixed": "#dae2fd",
+          "surface-container-high": "#dce9ff",
+          "on-primary-fixed": "#002113",
+          "on-tertiary-container": "#31394d",
+          "on-secondary": "#ffffff",
+          "primary-fixed-dim": "#4edea3",
+          "on-primary-container": "#00422b",
+          "on-primary": "#ffffff",
+          "primary-container": "#10b981",
+          "surface-dim": "#cbdbf5",
+          "on-primary-fixed-variant": "#005236",
+          "on-surface-variant": "#3c4a42",
+          "on-error-container": "#93000a",
+          "on-secondary-container": "#fffbff",
+          "tertiary-container": "#9ba2bb",
+          "error-container": "#ffdad6",
+          "surface": "#f8f9ff",
+          "outline-variant": "#bbcabf",
+          "surface-variant": "#d3e4fe",
+          "primary": "#006c49",
+          "background": "#f8f9ff",
+          "on-tertiary-fixed": "#131b2e",
+          "inverse-on-surface": "#eaf1ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter-lg": "2rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2rem",
+          "gutter": "1.5rem",
+          "margin": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-2xs": "0.125rem",
+          "space-2xl": "3rem",
+          "space-md": "1rem",
+          "gutter-sm": "1rem",
+          "space-xs": "0.25rem",
+          "margin-lg": "2rem",
+          "margin-sm": "1rem"
+        },
+        "fontFamily": {
+          "headline-lg-mobile": ["Inter"],
+          "title-sm": ["Inter"],
+          "display-lg-mobile": ["Inter"],
+          "title-md": ["Inter"],
+          "display-lg": ["Inter"],
+          "label-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-md": ["Inter"],
+          "body-sm": ["Inter"],
+          "stat-counter": ["Inter"],
+          "body-lg": ["Inter"],
+          "headline-sm": ["Inter"],
+          "headline-lg": ["Inter"],
+          "label-md": ["Inter"]
+        },
+        "fontSize": {
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "title-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600"}],
+          "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+          "stat-counter": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-gutter flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><img alt="BusinessHub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XQI3VukdHsP_K684gtieBUkOxY1rq9cgwxCCPEeAh9h3cggEpvkbqaqg9RDEq1SQGxG4D_-Iy71YCciK4MA2WVj21ixqWG7Odgeg7eoQSeDhItfpO2gXl04Sz0n6dtVbQ8C09-tyDRdDwDPdALt5rihQyE-uQSP4xmjIgSsmyX53mZErQriKw35XSFE-z9YeSYWHfbEL9DaxcYW_4i0X-mF00-DGKtw4KB2qYAi2ZAb8XHRmGRwAfGsTw"/><span class="font-title-md text-title-md text-inverse-on-surface tracking-tight">BusinessHub</span></div><span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-space-xs py-space-2xs rounded-lg uppercase tracking-wider">PRO</span></div><div class="px-gutter pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider">Operations Core</span></div><nav class="flex flex-col gap-space-2xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-title-sm text-title-sm shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="products-stock" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Products & Stock</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="sales-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Sales & Orders</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="invoices-billing" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Invoices & Billing</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="bookings-schedule" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">calendar_today</span><span>Bookings & Schedule</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="customers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Reports</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-tertiary-fixed-dim font-title-sm text-title-sm hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors" data-path="whatsapp-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">chat</span><span>WhatsApp Orders</span></div><span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-space-xs py-space-2xs rounded-full">4</span></a></nav></div><div class="p-space-sm"><div class="p-space-sm rounded-xl bg-surface-container-highest/10"><div class="flex items-center justify-between mb-space-xs"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-tertiary-fixed-dim">Store Online</span></div><span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">storefront</span></div><div class="flex items-center justify-between"><span class="font-title-sm text-title-sm text-inverse-on-surface truncate">Bloom & Co. Botanicals</span><button class="text-tertiary-fixed-dim hover:text-inverse-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md w-96"><div class="flex items-center w-full px-space-md py-space-xs rounded-lg bg-surface-container-low"><span class="material-symbols-outlined text-tertiary mr-space-xs text-[18px]">search</span><input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-tertiary focus:outline-none w-full" placeholder="Search products, invoices, customers... ⌘K" type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-tertiary hover:text-on-surface cursor-pointer transition-colors"><span class="material-symbols-outlined text-[18px]">date_range</span><span class="font-label-md text-label-md">Last 30 Days</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-on-surface-variant">WhatsApp Synced</span></div><button class="relative p-space-xs rounded-lg text-tertiary hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-title-sm text-title-sm hover:opacity-90 transition-opacity" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New</span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Hktimd6gRtew-KRfomTUj1V35YE7dPcnKr1GEWBAB-H93NUlVg2Hti3zU87CeEgMZ8H9yQpEndR9RPFCZhbVE9pb34a8UX7TjfDbgLQsByX5nAikN9RrV-VLi9yyc_tWjTK90b61VsdoQlmO8xmTG_Kf7xJ6-MGxo50bmtbmnEVpoG4H12xV4PQU0-6YZo_8PL_The4b32k9JEJIHnkpHBJu4ChOh4WwQfrT4vd5YjhdVXm9gPgB"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-on-surface leading-none">Elena Vance</span><span class="font-label-sm text-label-sm text-tertiary leading-tight">Owner</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="w-full max-w-[1600px] mx-auto p-gutter"><div class="flex flex-col w-full">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs mb-space-2xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Store Catalog & Logistics</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-tertiary">Real-time sync</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Products & Inventory</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">Manage catalog, stock levels, variants, and pricing across sales channels.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">upload_file</span>
+<span class="font-title-sm text-title-sm">Import CSV</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">download</span>
+<span class="font-title-sm text-title-sm">Export Catalog</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary-container font-title-sm text-title-sm shadow-md hover:opacity-95 transition-all" id="openNewProductModal" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add New Product</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-xl">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Total SKUs in Catalog</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-stat-counter text-stat-counter text-on-surface">142</span>
+<span class="font-body-sm text-body-sm text-tertiary">items live</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>+12%
+          </span>
+<span class="font-body-sm text-body-sm text-tertiary">vs. last month</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary-fixed/20 rounded-full blur-xl pointer-events-none"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Low Stock Alerts</span>
+<div class="w-9 h-9 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">notification_important</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-stat-counter text-stat-counter text-error">4</span>
+<span class="font-body-sm text-body-sm text-tertiary">items need attention</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+            Urgent Action
+          </span>
+<span class="font-body-sm text-body-sm text-tertiary">2 suppliers contacted</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-error-container/20 rounded-full blur-xl pointer-events-none"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Total Valuation</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-stat-counter text-stat-counter text-on-surface">$48,250.00</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+            Avg. Margin 52.4%
+          </span>
+<span class="font-body-sm text-body-sm text-tertiary">Retail Value: $101.4k</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary-fixed/20 rounded-full blur-xl pointer-events-none"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-4 gap-space-lg mb-space-lg">
+<div class="xl:col-span-3 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-lg flex-1 max-w-lg">
+<span class="material-symbols-outlined text-tertiary text-[20px]">search</span>
+<input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-tertiary focus:outline-none w-full" id="searchInput" placeholder="Search by product name, SKU, or barcode..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative inline-block">
+<select class="appearance-none bg-surface-container-low text-on-surface font-title-sm text-title-sm rounded-lg px-space-md py-space-xs pr-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-container" id="categoryFilter">
+<option value="All">All Categories</option>
+<option value="Houseplants">Houseplants</option>
+<option value="Ceramics & Pots">Ceramics & Pots</option>
+<option value="Care Tools">Care Tools</option>
+<option value="Soil & Fertilizer">Soil & Fertilizer</option>
+</select>
+<span class="material-symbols-outlined text-tertiary pointer-events-none absolute right-2 top-2 text-[18px]">expand_more</span>
+</div>
+<div class="relative inline-block">
+<select class="appearance-none bg-surface-container-low text-on-surface font-title-sm text-title-sm rounded-lg px-space-md py-space-xs pr-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-container" id="stockFilter">
+<option value="All">All Stock Levels</option>
+<option value="In Stock">In Stock</option>
+<option value="Low Stock">Low Stock</option>
+<option value="Out of Stock">Out of Stock</option>
+</select>
+<span class="material-symbols-outlined text-tertiary pointer-events-none absolute right-2 top-2 text-[18px]">expand_more</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-primary">chat</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">WhatsApp Active</span>
+<label class="relative inline-flex items-center cursor-pointer ml-space-xs">
+<input class="sr-only peer" id="whatsappFilterToggle" type="checkbox"/>
+<div class="w-8 h-4 bg-tertiary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="productsTable">
+<thead>
+<tr class="bg-surface-container-low text-tertiary font-label-sm text-label-sm uppercase tracking-wider h-11">
+<th class="px-space-md font-semibold">Product</th>
+<th class="px-space-md font-semibold">SKU</th>
+<th class="px-space-md font-semibold">Category</th>
+<th class="px-space-md font-semibold">Stock Status</th>
+<th class="px-space-md font-semibold">Cost / Retail</th>
+<th class="px-space-md font-semibold text-center">WhatsApp Catalog</th>
+<th class="px-space-md font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container" data-alt="Close up lush green Swiss Cheese plant leaves on a Monstera Deliciosa in a minimalist modern pottery studio with warm natural lighting and soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGI4ZmGFvWb_Y7BkWCMcKV0oCwtq5QE25ry9kWwmwlLwDdzOYuH2ITfdM9tZrnUDBQ8Sa8Hi-5yP-WPpdGH7bAHE39nUe3PTNG2xyR9wPzWxX945g-qb5EcECm9YPSRyQuC7W5Rl3MQtOaXGSqGvpeLW13IEigQQ-3HUgiKngtheBhynPJhAeLaTmnSQrSj2blzsRb9GzotEpa8uynrdte0eOYyHgBAeOIhkcWKUnTmcawUHc6FMBz"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Monstera Deliciosa (Large)</span>
+<span class="font-body-sm text-body-sm text-tertiary">30cm nursery container • Indoor</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-mono text-tertiary font-title-sm text-title-sm">#PLN-0102</span>
+</td>
+<td class="px-space-md py-space-md">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">Houseplants</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>In Stock
+                      </span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">45 units</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">$28.00 <span class="text-tertiary font-normal">/</span> $55.00</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">49% Margin</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="whatsapp-toggle relative inline-flex items-center cursor-pointer" data-state="true" type="button">
+<div class="w-9 h-5 bg-primary-container rounded-full transition-colors">
+<div class="w-4 h-4 bg-white rounded-full transition-transform translate-x-4 mt-0.5 ml-0.5 shadow-sm"></div>
+</div>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="Edit Product" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-space-xs py-space-2xs rounded bg-surface-container-low text-primary font-label-sm text-label-sm hover:bg-primary-fixed transition-colors font-medium" type="button">
+                      Restock
+                    </button>
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-error-container/10 group">
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container" data-alt="An elegant indoor Fiddle Leaf Fig tree in an artisanal ceramic base positioned beside a light-filled minimalist architectural window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkMvW1cGFm6hcRmHwP7flFLuKAfw2_LTxE4IKAmJWfLnQhFj1ldlkzpD4LdKLbwcmWGok-GkmUA_RcWE-4CMQuHERVh0FcKZuZ_bUk_7MrA2z_E6rEJ3NkvB043oxL1CMNXnVF_Sw6j_Ajwn7Via0BgrNGIiCcEAklJ1yLx7TV1KJ9pjfL0OTBueuW5c5IWuZ36ngDpgxp1XHO7NfhKH97dDfrVOMFu3O3Zq58kbPlShX8xq_5iRoF"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Fiddle Leaf Fig Tree</span>
+<span class="font-body-sm text-body-sm text-tertiary">Standard trunk • 5ft tall</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-mono text-tertiary font-title-sm text-title-sm">#PLN-0105</span>
+</td>
+<td class="px-space-md py-space-md">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">Houseplants</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>Low Stock
+                      </span>
+<span class="font-label-sm text-label-sm text-error font-medium">3 left</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-error h-1.5 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">$42.00 <span class="text-tertiary font-normal">/</span> $95.00</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">56% Margin</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="whatsapp-toggle relative inline-flex items-center cursor-pointer" data-state="true" type="button">
+<div class="w-9 h-5 bg-primary-container rounded-full transition-colors">
+<div class="w-4 h-4 bg-white rounded-full transition-transform translate-x-4 mt-0.5 ml-0.5 shadow-sm"></div>
+</div>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="Edit Product" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-space-xs py-space-2xs rounded bg-error-container text-on-error-container font-label-sm text-label-sm hover:opacity-90 transition-opacity font-semibold" type="button">
+                      Restock!
+                    </button>
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container" data-alt="Rustic handcrafted terracotta clay pots stacked neatly on a wooden shelf in an earthy sunlit artisan pottery workshop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO4Etm5kXOIqaFpJfKpISewx7Fn5ovbi9tuLyRpqc8K14iVZLEQ1Xij9v_yJMMGdu46qdaiAbuJRmLoXX5ddjTeRRY73f4GXSBcLEA3Hcn4EWIJvCRf7PXM2h7a4P7bZr2PyFSqV1jbIKq0bJh8jKW5GCvmP1SArRCTnHgIF0WelM5OVal_0FLPl59gbpfyjuHtt-nkmIbcZetlYFF_VKoqrSoaGpe41yRCuuWFMDEurSEEHGYjai-"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Handcrafted Terracotta Pot</span>
+<span class="font-body-sm text-body-sm text-tertiary">Natural unglazed • 8-inch</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-mono text-tertiary font-title-sm text-title-sm">#POT-0341</span>
+</td>
+<td class="px-space-md py-space-md">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">Ceramics & Pots</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>In Stock
+                      </span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">84 units</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-1.5 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">$7.50 <span class="text-tertiary font-normal">/</span> $18.00</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">58% Margin</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="whatsapp-toggle relative inline-flex items-center cursor-pointer" data-state="true" type="button">
+<div class="w-9 h-5 bg-primary-container rounded-full transition-colors">
+<div class="w-4 h-4 bg-white rounded-full transition-transform translate-x-4 mt-0.5 ml-0.5 shadow-sm"></div>
+</div>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="Edit Product" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-space-xs py-space-2xs rounded bg-surface-container-low text-primary font-label-sm text-label-sm hover:bg-primary-fixed transition-colors font-medium" type="button">
+                      Restock
+                    </button>
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-error-container/10 group">
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container" data-alt="Frosted glass spray bottle with organic botanical leaf mist liquid against a soft clean marble and green foliage studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCycHzRYT3HLFBtrQQV_FhLe0NqqiUTnvDXXuNAQqEUCIRhFXwhRYEfq3Z0hkOx8wBPGCkvEDbkihDZ8zIqmQ1HDqmIpyA1YbdjlZsbQPMKwIEq_r47YZmC653okm_o7CH_OKkJRzaXfMewBmRCpFMf2CzY2AOy0CrH178vQhJ-FvifLzOtMpkCYO-SkYisGejH_PmNVNLrLkUQYruYT1CuweYOTEvbXfy_iIxNS1W1Nege1jXcsFbh"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Organic Foliage Mist</span>
+<span class="font-body-sm text-body-sm text-tertiary">500ml amber bottle • Neem & Kelp</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-mono text-tertiary font-title-sm text-title-sm">#CAR-0082</span>
+</td>
+<td class="px-space-md py-space-md">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">Care Tools</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>Out of Stock
+                      </span>
+<span class="font-label-sm text-label-sm text-error font-medium">0 units</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-error h-1.5 rounded-full" style="width: 0%"></div>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">$5.20 <span class="text-tertiary font-normal">/</span> $16.50</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">68% Margin</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="whatsapp-toggle relative inline-flex items-center cursor-pointer" data-state="false" type="button">
+<div class="w-9 h-5 bg-tertiary-container rounded-full transition-colors">
+<div class="w-4 h-4 bg-white rounded-full transition-transform translate-x-0 mt-0.5 ml-0.5 shadow-sm"></div>
+</div>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="Edit Product" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-space-xs py-space-2xs rounded bg-error-container text-on-error-container font-label-sm text-label-sm hover:opacity-90 transition-opacity font-semibold" type="button">
+                      Restock!
+                    </button>
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-error-container/10 group">
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container" data-alt="Minimalist sage green matte ceramic cylinder planter placed on a natural oak surface with soft directional sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfiFWc8VwUqma1wOyaibP1ozxTteSpDcpFKqNzLYoxLQ3g1ZL116hiy8X0MISm9TWKEwNJ39Gs36B2XUMpIzvI0HHvqS5LNfdV7d7UkAUUK2qPUdY1qodH3dIQNEQtVInl3VYKlkURxmKRgEc9Fee1DJZiPbBMQEzzNuA6fsYLtkcGNYyFNN80s3slgNNsRx8WOL0GkdhZ028y7Zc84mOCGxF0QMAVY5VXq5rjcwaQkvKkcs5rDj9c"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Ceramic Planter - Sage</span>
+<span class="font-body-sm text-body-sm text-tertiary">Glazed stoneware with drainage tray</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-mono text-tertiary font-title-sm text-title-sm">#POT-0345</span>
+</td>
+<td class="px-space-md py-space-md">
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">Ceramics & Pots</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>Low Stock
+                      </span>
+<span class="font-label-sm text-label-sm text-error font-medium">2 left</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-error h-1.5 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">$14.00 <span class="text-tertiary font-normal">/</span> $34.00</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">58% Margin</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="whatsapp-toggle relative inline-flex items-center cursor-pointer" data-state="true" type="button">
+<div class="w-9 h-5 bg-primary-container rounded-full transition-colors">
+<div class="w-4 h-4 bg-white rounded-full transition-transform translate-x-4 mt-0.5 ml-0.5 shadow-sm"></div>
+</div>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" title="Edit Product" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-space-xs py-space-2xs rounded bg-error-container text-on-error-container font-label-sm text-label-sm hover:opacity-90 transition-opacity font-semibold" type="button">
+                      Restock!
+                    </button>
+<button class="p-1 rounded hover:bg-surface-container text-tertiary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-tertiary">Showing 5 of 142 products</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-tertiary font-label-md text-label-md hover:text-on-surface disabled:opacity-50" disabled="" type="button">Previous</button>
+<span class="px-space-xs font-label-md text-label-md text-on-surface font-semibold">1</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-tertiary font-label-md text-label-md hover:text-on-surface" type="button">2</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-tertiary font-label-md text-label-md hover:text-on-surface" type="button">3</button>
+<span class="text-tertiary font-label-md text-label-md">...</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-tertiary font-label-md text-label-md hover:text-on-surface" type="button">29</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-tertiary font-label-md text-label-md hover:text-on-surface" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-1 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-low mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<h2 class="font-title-sm text-title-sm text-on-surface">Reorder Dispatch</h2>
+</div>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-space-xs py-space-2xs rounded-full font-bold">2 CRITICAL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Current velocity indicates these will deplete before next scheduled supply cycle.</p>
+<div class="flex flex-col gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block leading-tight">Fiddle Leaf Fig Tree</span>
+<span class="font-mono text-tertiary font-label-sm text-label-sm">#PLN-0105</span>
+</div>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-space-xs py-space-2xs rounded font-semibold">3 left</span>
+</div>
+<div class="text-tertiary font-body-sm text-body-sm">
+              Supplier: <span class="text-on-surface font-medium">Verdant Coast Nurseries</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<button class="flex-1 py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:opacity-90 transition-opacity text-center" type="button">
+                Create PO ($840)
+              </button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-tertiary hover:text-on-surface transition-colors" title="Direct WhatsApp Supplier" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block leading-tight">Ceramic Planter - Sage</span>
+<span class="font-mono text-tertiary font-label-sm text-label-sm">#POT-0345</span>
+</div>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-space-xs py-space-2xs rounded font-semibold">2 left</span>
+</div>
+<div class="text-tertiary font-body-sm text-body-sm">
+              Supplier: <span class="text-on-surface font-medium">Kyoto Clayworks</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<button class="flex-1 py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:opacity-90 transition-opacity text-center" type="button">
+                Create PO ($420)
+              </button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-tertiary hover:text-on-surface transition-colors" title="Direct WhatsApp Supplier" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-surface-container-low flex items-center justify-between">
+<button class="w-full py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors text-center" type="button">
+            Batch Reorder All (4 items)
+          </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<h3 class="font-title-sm text-title-sm text-on-surface mb-space-xs">Category Breakdown</h3>
+<span class="font-body-sm text-body-sm text-tertiary mb-space-md">Live distribution of stock valuation</span>
+<div class="flex flex-col gap-space-sm">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface font-medium">Houseplants</span>
+<span class="text-tertiary">$26,450 (55%)</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-1.5 rounded-full" style="width: 55%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface font-medium">Ceramics & Pots</span>
+<span class="text-tertiary">$14,100 (29%)</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary-container h-1.5 rounded-full" style="width: 29%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface font-medium">Care Tools & Soil</span>
+<span class="text-tertiary">$7,700 (16%)</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary-container h-1.5 rounded-full" style="width: 16%"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">sync_saved_locally</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Auto-Sync Active</span>
+<span class="font-body-sm text-body-sm text-tertiary">POS, Shopify, & WhatsApp Live</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 flex items-center justify-end bg-on-surface/40 backdrop-blur-sm hidden transition-opacity" id="newProductModal">
+<div class="w-full max-w-lg bg-surface-container-lowest h-full shadow-2xl p-space-xl flex flex-col justify-between overflow-y-auto">
+<div>
+<div class="flex items-center justify-between pb-space-md mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Inventory Intake</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Add New Product</h3>
+</div>
+<button class="p-space-xs rounded-lg text-tertiary hover:text-on-surface hover:bg-surface-container transition-colors" id="closeNewProductModal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md">
+<div>
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">Product Name</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-space-md py-space-xs focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md" placeholder="e.g. Calathea Orbifolia" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">SKU</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-space-md py-space-xs focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md" placeholder="#PLN-0108" type="text"/>
+</div>
+<div>
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">Category</label>
+<select class="w-full bg-surface-container-low text-on-surface rounded-lg px-space-md py-space-xs focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md">
+<option>Houseplants</option>
+<option>Ceramics & Pots</option>
+<option>Care Tools</option>
+<option>Soil & Fertilizer</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">Cost Price ($)</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-space-md py-space-xs focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md" placeholder="18.50" step="0.01" type="number"/>
+</div>
+<div>
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">Retail Price ($)</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-space-md py-space-xs focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md" placeholder="42.00" step="0.01" type="number"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">Initial Stock Qty</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-space-md py-space-xs focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md" placeholder="25" type="number"/>
+</div>
+<div>
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-2xs">Low Stock Threshold</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-space-md py-space-xs focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md" placeholder="5" type="number"/>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-lg mt-space-xs">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Publish to WhatsApp Catalog</span>
+<span class="font-body-sm text-body-sm text-tertiary">Allow customers to order instantly via chat</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-tertiary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</form>
+</div>
+<div class="pt-space-lg flex items-center justify-end gap-space-sm">
+<button class="px-space-lg py-space-sm rounded-lg bg-surface-container text-on-surface font-title-sm text-title-sm hover:bg-surface-container-high transition-colors" id="cancelNewProduct" type="button">
+          Cancel
+        </button>
+<button class="px-space-xl py-space-sm rounded-lg bg-primary-container text-on-primary-container font-title-sm text-title-sm shadow hover:opacity-90 transition-opacity" type="button">
+          Save Product
+        </button>
+</div>
+</div>
+</div>
+<script>
+    (function () {
+      const openModalBtn = document.getElementById('openNewProductModal');
+      const closeModalBtn = document.getElementById('closeNewProductModal');
+      const cancelModalBtn = document.getElementById('cancelNewProduct');
+      const modal = document.getElementById('newProductModal');
+
+      function toggleModal(show) {
+        if (show) {
+          modal.classList.remove('hidden');
+        } else {
+          modal.classList.add('hidden');
+        }
+      }
+
+      if (openModalBtn && modal) {
+        openModalBtn.addEventListener('click', () => toggleModal(true));
+      }
+      if (closeModalBtn && modal) {
+        closeModalBtn.addEventListener('click', () => toggleModal(false));
+      }
+      if (cancelModalBtn && modal) {
+        cancelModalBtn.addEventListener('click', () => toggleModal(false));
+      }
+
+      // WhatsApp Visibility Switch Interactions
+      const toggles = document.querySelectorAll('.whatsapp-toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const isActive = this.getAttribute('data-state') === 'true';
+          const newState = !isActive;
+          this.setAttribute('data-state', String(newState));
+
+          const track = this.firstElementChild;
+          const knob = track.firstElementChild;
+
+          if (newState) {
+            track.classList.remove('bg-tertiary-container');
+            track.classList.add('bg-primary-container');
+            knob.classList.remove('translate-x-0');
+            knob.classList.add('translate-x-4');
+          } else {
+            track.classList.remove('bg-primary-container');
+            track.classList.add('bg-tertiary-container');
+            knob.classList.remove('translate-x-4');
+            knob.classList.add('translate-x-0');
+          }
+        });
+      });
+
+      // Quick filter search handler
+      const searchInput = document.getElementById('searchInput');
+      const categoryFilter = document.getElementById('categoryFilter');
+      const stockFilter = document.getElementById('stockFilter');
+      const tableRows = document.querySelectorAll('#productsTable tbody tr');
+
+      function filterTable() {
+        const query = searchInput ? searchInput.value.toLowerCase() : '';
+        const cat = categoryFilter ? categoryFilter.value : 'All';
+        const st = stockFilter ? stockFilter.value : 'All';
+
+        tableRows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          const matchesQuery = !query || text.includes(query);
+          const matchesCat = (cat === 'All') || text.includes(cat.toLowerCase());
+          const matchesStock = (st === 'All') || text.includes(st.toLowerCase());
+
+          if (matchesQuery && matchesCat && matchesStock) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+
+      if (searchInput) searchInput.addEventListener('input', filterTable);
+      if (categoryFilter) categoryFilter.addEventListener('change', filterTable);
+      if (stockFilter) stockFilter.addEventListener('change', filterTable);
+    })();
+  </script>
+</div></div></main></div></body></html>
